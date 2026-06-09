@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Abu Saad & Zarkha Shaik — Official Invitation</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
@@ -23,49 +23,47 @@
             padding: 0;
         }
 
-        body {
-            font-family: var(--font-sans);
+        html, body {
+            width: 100%;
+            height: 100%;
             background-color: #111111;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            user-select: none;
         }
 
-        /* 9:16 Smooth Scrolling Container Framework Layout */
+        /* Fixed Mobile Container to guarantee 4 distinct scrolling pages */
         .invitation-container {
             width: 100%;
             max-width: 410px;
-            height: 92vh;
-            max-height: 760px;
+            height: 100vh;
             background-color: var(--dark-blue);
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             position: relative;
-            overflow-y: auto;
+            overflow-y: scroll; /* Forces vertical touch scrolling on all phones */
+            -webkit-overflow-scrolling: touch; /* Extra smooth scrolling for iPhones */
             scroll-snap-type: y mandatory;
-            scroll-behavior: smooth;
-            scrollbar-width: none; /* Hides basic desktop scrollbars */
+            scrollbar-width: none;
         }
         .invitation-container::-webkit-scrollbar { display: none; }
 
         .slide {
             width: 100%;
-            height: 100%;
+            height: 100vh; /* Every single page takes up exactly full screen height */
             scroll-snap-align: start;
+            flex-shrink: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 24px;
+            padding: 30px 24px;
             position: relative;
             overflow: hidden;
         }
 
-        /* Perfect Boundary Structural Framing Borders on All Views */
         .slide-frame-border {
             position: absolute;
             top: 16px;
@@ -81,7 +79,7 @@
         .theme-dark { background-color: var(--dark-blue); color: var(--white); }
         .theme-light { background-color: var(--white); color: var(--dark-blue); }
 
-        /* Slide 1 Vector Pulsing Heart Asset Layout */
+        /* Slide 1 Heart Layout */
         .heart-shape-bg {
             width: 260px;
             height: 240px;
@@ -113,7 +111,6 @@
             100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(17,37,76,0.4)); }
         }
 
-        /* Minimal Matching Soft Leaf Background Sprites */
         .floral-bg-layer {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -132,7 +129,7 @@
         .top-left-leaf { top: 25px; left: 25px; border-top: 1px solid var(--dark-blue); border-left: 1px solid var(--dark-blue); }
         .bottom-right-leaf { bottom: 25px; right: 25px; border-bottom: 1px solid var(--dark-blue); border-right: 1px solid var(--dark-blue); }
 
-        /* Dynamic On-Scroll Fade Animation Matrix */
+        /* Smooth Reveal Text Effects */
         .reveal-element {
             opacity: 0;
             transform: translateY(12px);
@@ -144,7 +141,6 @@
             transform: translateY(0);
         }
 
-        /* Elegant Micro-gapped Typography Headers */
         .arabic-header { font-size: 20px; margin-bottom: 4px !important; font-weight: normal; }
         .year-label { font-family: var(--font-display); font-size: 15px; letter-spacing: 5px; }
         .hero-title { font-family: var(--font-display); font-size: 24px; font-weight: 400; letter-spacing: 3px; }
@@ -157,7 +153,6 @@
         .venue-heading { font-family: var(--font-display); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px !important; }
         .venue-spot { font-family: var(--font-display); font-size: 15px; font-weight: 600; }
 
-        /* QR Wrapping Windows styling */
         .qr-wrapper {
             width: 145px;
             height: 145px;
@@ -188,7 +183,6 @@
             position: relative;
         }
 
-        /* Continuous On-Screen Interactive Navigation Guides */
         .scroll-hint-text {
             position: absolute;
             bottom: 25px;
@@ -202,12 +196,10 @@
 </head>
 <body>
 
-    <!-- Silent audio loops streaming your Amaran background track file directly -->
     <audio id="secretAudioPlayer" loop autoplay>
         <source src="amaran_bgm.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Native scrolling configuration layer structure -->
     <div class="invitation-container" id="scrollViewport">
 
         <!-- PAGE 1: SAVE THE DATE -->
@@ -235,3 +227,8 @@
             
             <div class="prominent-name reveal-element" style="transition-delay: 0.22s; margin-top: 4px;">ABU SAAD T M</div>
             <div class="sub-parentage reveal-element" style="transition-delay: 0.28s;">S/O Musthafa T A &amp; Mrs. Haseen Taj<br>Umar Bagh Layout, JP Nagar, Bangalore 560078</div>
+            
+            <div class="conjunction-style reveal-element" style="transition-delay: 0.34s;">— weds —</div>
+            
+            <div class="prominent-name reveal-element" style="transition-delay: 0.4s;">ZARKHA SHAIK</div>
+            <div class="sub-parentage reveal-element" style="transition-delay: 0.46s; margin-bottom: 4px;">D/O of Late Rizwan Shaikh<br>KSA Square, Madanpura, Mumbai</div>

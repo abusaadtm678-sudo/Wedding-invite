@@ -35,15 +35,15 @@
             align-items: center;
         }
 
-        /* Fixed Mobile Container to guarantee 4 distinct scrolling pages */
+        /* Fixed Portrait mobile view template wrapper preventing page cutting overflows */
         .invitation-container {
             width: 100%;
             max-width: 410px;
             height: 100vh;
             background-color: var(--dark-blue);
             position: relative;
-            overflow-y: scroll; /* Forces vertical touch scrolling on all phones */
-            -webkit-overflow-scrolling: touch; /* Extra smooth scrolling for iPhones */
+            overflow-y: scroll; /* Forces finger swipe touch inputs on all smartphone models */
+            -webkit-overflow-scrolling: touch; /* Extra rendering optimization smooth layout for iOS Safari */
             scroll-snap-type: y mandatory;
             scrollbar-width: none;
         }
@@ -51,7 +51,7 @@
 
         .slide {
             width: 100%;
-            height: 100vh; /* Every single page takes up exactly full screen height */
+            height: 100vh; /* Every single block takes up exactly 100% full panel viewport height */
             scroll-snap-align: start;
             flex-shrink: 0;
             display: flex;
@@ -64,6 +64,7 @@
             overflow: hidden;
         }
 
+        /* Unified Continuous Framing Borders across all screen sizes */
         .slide-frame-border {
             position: absolute;
             top: 16px;
@@ -79,7 +80,7 @@
         .theme-dark { background-color: var(--dark-blue); color: var(--white); }
         .theme-light { background-color: var(--white); color: var(--dark-blue); }
 
-        /* Slide 1 Heart Layout */
+        /* Slide 1 pulsing shape graphic layout */
         .heart-shape-bg {
             width: 260px;
             height: 240px;
@@ -129,7 +130,7 @@
         .top-left-leaf { top: 25px; left: 25px; border-top: 1px solid var(--dark-blue); border-left: 1px solid var(--dark-blue); }
         .bottom-right-leaf { bottom: 25px; right: 25px; border-bottom: 1px solid var(--dark-blue); border-right: 1px solid var(--dark-blue); }
 
-        /* Smooth Reveal Text Effects */
+        /* Dynamic Visual Transition Engine Elements mapping */
         .reveal-element {
             opacity: 0;
             transform: translateY(12px);
@@ -141,6 +142,7 @@
             transform: translateY(0);
         }
 
+        /* Micro-Gapped Fine Typography definitions */
         .arabic-header { font-size: 20px; margin-bottom: 4px !important; font-weight: normal; }
         .year-label { font-family: var(--font-display); font-size: 15px; letter-spacing: 5px; }
         .hero-title { font-family: var(--font-display); font-size: 24px; font-weight: 400; letter-spacing: 3px; }
@@ -153,6 +155,7 @@
         .venue-heading { font-family: var(--font-display); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px !important; }
         .venue-spot { font-family: var(--font-display); font-size: 15px; font-weight: 600; }
 
+        /* Integrated High-Contrast Matrix Frames */
         .qr-wrapper {
             width: 145px;
             height: 145px;
@@ -196,13 +199,14 @@
 </head>
 <body>
 
+    <!-- Ambient Music player pipeline context -->
     <audio id="secretAudioPlayer" loop autoplay>
         <source src="amaran_bgm.mp3" type="audio/mpeg">
     </audio>
 
     <div class="invitation-container" id="scrollViewport">
 
-        <!-- PAGE 1: SAVE THE DATE -->
+        <!-- SLIDE 1: SAVE THE DATE (Royal Blue Background) -->
         <section class="slide theme-dark active-viewport">
             <div class="slide-frame-border"></div>
             <div class="heart-shape-bg reveal-element" style="transition-delay: 0.1s;">
@@ -215,7 +219,7 @@
             <div class="scroll-hint-text">📜 Swipe Up to Open Card</div>
         </section>
 
-        <!-- PAGE 2: THE MAIN INVITATION -->
+        <!-- SLIDE 2: MAIN INVITATION (White Floral Theme) -->
         <section class="slide theme-light">
             <div class="slide-frame-border"></div>
             <div class="floral-bg-layer"></div>
@@ -228,7 +232,3 @@
             <div class="prominent-name reveal-element" style="transition-delay: 0.22s; margin-top: 4px;">ABU SAAD T M</div>
             <div class="sub-parentage reveal-element" style="transition-delay: 0.28s;">S/O Musthafa T A &amp; Mrs. Haseen Taj<br>Umar Bagh Layout, JP Nagar, Bangalore 560078</div>
             
-            <div class="conjunction-style reveal-element" style="transition-delay: 0.34s;">— weds —</div>
-            
-            <div class="prominent-name reveal-element" style="transition-delay: 0.4s;">ZARKHA SHAIK</div>
-            <div class="sub-parentage reveal-element" style="transition-delay: 0.46s; margin-bottom: 4px;">D/O of Late Rizwan Shaikh<br>KSA Square, Madanpura, Mumbai</div>
